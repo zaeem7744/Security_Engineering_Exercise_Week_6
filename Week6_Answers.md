@@ -114,3 +114,44 @@ Below are flowcharts illustrating the supply chain process, onboarding checks, a
 
 **Visual 3: Supply Chain Actors & Security Controls**  
 ![Supply Chain & Controls](flowchart3.png)
+
+
+
+## Task 3: Securing Docker
+
+**Chosen Concept:** Container Hardening and Image Security  
+
+---
+
+### Overview
+
+In this task, we focused on auditing Dockerfiles, identifying insecure practices, and applying best practices to improve container security. Tools such as **Hadolint** were used to lint Dockerfiles and highlight issues like the use of `latest` tags, unpinned dependencies, and inefficient `RUN` instructions.
+
+---
+
+### Procedure
+
+#### Dockerfiles Used
+
+```text
+- Dockerfile.weak: used `node:latest`, `ADD` instead of `COPY`, unpinned npm packages, multiple RUN instructions
+- Dockerfile.secure: based on `node:18.20.4-alpine3.20` with pinned APK packages, proper user setup, and health checks
+
+
+docker run --rm -i hadolint/hadolint < Dockerfile
+Findings for Dockerfile.weak:
+
+- DL3007: Using latest tag is risky.
+- DL3020: ADD should be replaced with COPY.
+- DL3027: Use apt-get instead of apt.
+- DL3016: Pin npm package versions.
+- DL3059: Multiple consecutive RUN instructions; consider consolidation.
+Fixes Applied in Dockerfile.secure
+
+- Used specific Alpine node image version (`node:18.20.4-alpine3.20`)
+- Replaced ADD with COPY
+- Installed packages with apk add --no-cache and removed cache
+- Created non-root user and group
+- Consolidated RUN instructions
+- Added HEALTHCHECK for container monitoring
+- Pinned dependencies where possible (`npm ci --only=production --no-audit`)
