@@ -155,3 +155,8 @@ Fixes Applied in Dockerfile.secure
 - Consolidated RUN instructions
 - Added HEALTHCHECK for container monitoring
 - Pinned dependencies where possible (`npm ci --only=production --no-audit`)
+
+
+
+(1.png)
+(2.png)
