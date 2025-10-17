@@ -129,7 +129,10 @@ In this task, we focused on auditing Dockerfiles, identifying insecure practices
 
 ---
 
-### Procedure
+
+**Visual**  
+![Image1](1.png) 
+![Image2](2.png)
 
 #### Dockerfiles Used
 
@@ -158,5 +161,3 @@ Fixes Applied in Dockerfile.secure
 
 
 
-(1.png)
-(2.png)
