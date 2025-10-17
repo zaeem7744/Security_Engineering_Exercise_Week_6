@@ -107,10 +107,10 @@ These challenges require management support, clear communication with partners, 
 Below are flowcharts illustrating the supply chain process, onboarding checks, and security controls.
 
 **Visual 1: Product Lifecycle / Supply Chain Steps**  
-![Product Lifecycle](images/flowchart1.png)
+![Product Lifecycle](flowchart1.png)
 
 **Visual 2: Supplier Onboarding & Hardware Verification**  
-![Supplier Onboarding](images/flowchart2.png)
+![Supplier Onboarding](flowchart2.png)
 
 **Visual 3: Supply Chain Actors & Security Controls**  
-![Supply Chain & Controls](images/flowchart3.png)
+![Supply Chain & Controls](flowchart3.png)
